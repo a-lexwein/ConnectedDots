@@ -11,7 +11,7 @@ body {
   shape-rendering: crispEdges;
 }
 
-.dot {
+.dotClick {
   stroke: #000;
   stroke-width: .6em;
 }

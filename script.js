@@ -92,7 +92,12 @@ var svg = d3.select("#main").append("svg").attr({
   height: h
 });
 
-svg.selectAll(".dot")
+var lines = svg.append('g');
+var dots = svg.append('g');
+var text = svg.append('g');
+var dotClick = svg.append('g');
+
+dots.selectAll(".dot")
    .data(data)
    .enter().append("circle")
    .attr("class", "dot")
@@ -100,10 +105,24 @@ svg.selectAll(".dot")
    .attr("cx", xMap)
    .attr("cy", yMap)
    .attr("col", xValue)
+//   .attr('fill-opacity', 0)
    .attr('text', x => x.text)
    .attr('used', false)
 
-svg.selectAll(".text")
+dotClick.selectAll(".dotClick")
+  .data(data)
+  .enter().append("circle")
+  .attr("class", "dotClick")
+  .attr("r", 27)
+  .attr("cx", xMap)
+  .attr("cy", yMap)
+  .attr("col", xValue)
+  .attr('fill-opacity', 0)
+//  .attr('stroke-opacity', 0)
+  .attr('text', x => x.text)
+  .attr('used', false)
+
+text.selectAll(".text")
    .data(data)
    .enter().append("text")
    .attr("class", "text")
@@ -113,7 +132,7 @@ svg.selectAll(".text")
    .text(x => x.text)
 
 function connectDots(a,b) {
-  svg.append('line')
+  lines.append('line')
       .attr({
          x1: a.x,
          y1: a.y,
@@ -128,7 +147,7 @@ function removeLastLine() {
   activeCol --;
 }
 
-svg.selectAll(".dot").on("click", function() {
+svg.selectAll(".dotClick").on("click", function() {
   var click = {
     x:d3.select(this).attr('cx'),
     y:d3.select(this).attr('cy'),
