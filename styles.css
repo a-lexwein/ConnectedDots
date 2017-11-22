@@ -1,0 +1,41 @@
+body {
+  font: 17px sans-serif;
+  white-space: pre-line;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+  stroke-width: .6em;
+}
+
+.text {
+  text-anchor: middle;
+  margin: 0 auto;
+  width: 30em;
+}
+
+#guess {
+  font-size: 24pt;
+  float: right;
+  position: relative;
+  visibility: hidden;
+}
+#guess2 {
+  font-size: 24pt;
+  float: right;
+  position: relative;
+}
+
+
+#main {
+  float: left;
+  width: 60%;
+}
