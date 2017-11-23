@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="styles.css">.
-
+<link rel="stylesheet" type="text/css" href="styles.css">
 <!-- Example based on http://bl.ocks.org/mbostock/3887118 -->
 <!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
 <!-- Coding style based on http://gist.github.com/mbostock/5977197 -->
-
 <body>
+  <div>
+    <button class="button" onclick="reset()">Reset</button>
+    <button class="button" onclick="newBoard()">New Board</button>
+  </div>
   <div id='main'></div>
   <div id='guess'></div>
   <ol id='guess2'></ol>
